@@ -1,0 +1,17 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        lambdaisland/regal {:mvn/version "0.0.89"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {seancorfield/next.jdbc {:mvn/version "1.1.610"}
+                      org.postgresql/postgresql {:mvn/version "42.2.18"}
+                      lambdaisland/kaocha {:mvn/version "1.0.829"}
+                      org.clojure/test.check {:mvn/version "0.10.0"}}}
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+  :jar {:extra-deps {seancorfield/depstar {:mvn/version "0.5.1"}}
+        :main-opts ["-m" "hf.depstar.jar" "pgerrors.jar"]}}}
