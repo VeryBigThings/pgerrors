@@ -4,7 +4,7 @@ Small utility library to extract data from PostgreSQL errors.
 
 ## Usage
 
-`com.verybigthings.pgerrors/extract-data` function accepts `org.postgresql.util.PSQLException` and returns a map with data extracted from the error message.
+`com.verybigthings.pgerrors/extract-data` function accepts `org.postgresql.util.PSQLException` and returns a map with data extracted from the exception.
 
 ```clojure
 (com.verybigthings.pgerrors/extract-data e)
